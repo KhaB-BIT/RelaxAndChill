@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Layout/Header/Header";
+import Home from "./pages/Home/Home";
+import BookCafe from "./pages/BookCafe/BookCafe";
+import Player from "./components/Layout/Player/Player";
+import LateralMenu from "./components/Layout/LateralMenu/LateralMenu";
+import { useContext } from "react";
+import { StoreContext } from "./store";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const valueCT = useContext(StoreContext);
+    const enter = valueCT.enter;
+    return (
+        <div className="App select-none">
+            <Header />
+            {enter ? <BookCafe /> : <Home />}
+            <LateralMenu />
+            <Player />
+        </div>
+    );
 }
 
 export default App;
