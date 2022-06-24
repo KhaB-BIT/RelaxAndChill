@@ -32,7 +32,7 @@ const BookCafe = () => {
     };
     const handleKeyboard = () => {
         setKeyboard((s) => !s);
-        if (rain === true) {
+        if (keyboard === true) {
             setVolumeKeyboard(0)
         } else {
             setVolumeKeyboard(50)
