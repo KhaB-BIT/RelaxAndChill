@@ -56,7 +56,7 @@ const Header = () => {
             <div>
                 {/* Logo */}
                 <img
-                    className="h-[100px] w-[178px]"
+                    className="object-cover h-[100px] w-[178px]"
                     src="https://lofi.co/static/media/logo.0cbf9e63b4a021661126.gif"
                     alt="logo"
                 />
@@ -64,7 +64,7 @@ const Header = () => {
             <div className="flex items-center h-full gap-[16px] ">
                 {/* Toggle Weather */}
                 <button
-                    className={`relative w-[61px] h-[30px] rounded-full border-none outline-none shadow-xl ${toggled ? "bg-[#f3a952]" : "bg-[#11216d]"
+                    className={` relative w-[61px] h-[30px] rounded-full border-none outline-none shadow-xl  ${toggled ? "bg-[#f3a952]" : "bg-[#11216d]"
                         }`}
                     onClick={handleToggle}
                 >
@@ -83,7 +83,7 @@ const Header = () => {
                         alt="iconWeather"
                     />
                 </button>
-                <div className="flex items-center cursor-pointer gap-[8px] bg-gradient-to-l px-[16px] py-[5px] rounded-[8px] from-[#e18660e6] to-[#f4ca5de6]">
+                <div className="hidden md:flex items-center cursor-pointer gap-[8px] bg-gradient-to-l px-[16px] py-[5px] rounded-[8px] from-[#e18660e6] to-[#f4ca5de6]">
                     <h3 className="text-[32px] leading-[36px]">🚀</h3>
                     <p className="font-bold leading-[18px] text-white text-[14px]">
                         Access +20 scenes
