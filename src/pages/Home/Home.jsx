@@ -20,6 +20,7 @@ const Home = () => {
     const traffic = valueCT.traffic
     const setTraffic = valueCT.setTraffic
     const setVolumeTraffic = valueCT.setVolumeTraffic
+    const fullscreen = valueCT.fullscreen
 
     const handleRain = () => {
         setRain((s) => !s);
@@ -60,7 +61,7 @@ const Home = () => {
                 <div>
                     {/* Day */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute top-[-11%] object-cover transition-all ease-in duration-300 ${comboMode === "true-false"
+                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-opacity ease-in duration-300 ${comboMode === "true-false"
                             ? "opacity-100"
                             : "opacity-0"
                             }`}
@@ -75,7 +76,7 @@ const Home = () => {
                     </video>
                     {/* Rain Day */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute top-[-11%] object-cover transition-all ease-in duration-300 ${comboMode === "true-true"
+                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-opacity ease-in duration-300 ${comboMode === "true-true"
                             ? "opacity-100"
                             : "opacity-0"
                             }`}
@@ -90,7 +91,7 @@ const Home = () => {
                     </video>
                     {/* Night */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute top-[-11%] object-cover transition-all ease-in duration-300 ${comboMode === "false-false"
+                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-opacity ease-in duration-300 ${comboMode === "false-false"
                             ? "opacity-100"
                             : "opacity-0"
                             }`}
@@ -105,7 +106,7 @@ const Home = () => {
                     </video>
                     {/* Rain Night */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute top-[-11%] object-cover transition-all ease-in duration-300 ${comboMode === "false-true"
+                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-opacity ease-in duration-300 ${comboMode === "false-true"
                             ? "opacity-100"
                             : "opacity-0"
                             }`}

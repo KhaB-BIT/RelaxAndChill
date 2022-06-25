@@ -16,6 +16,7 @@ function Provider({ children }) {
     const [soundKey, setSoundKey] = useState(50);
     const [volumeSong, setVolumeSong] = useState(50);
     const [song, setSong] = useState(chill);
+    const [fullscreen, setFullscreen] = useState(false);
 
     return (
         <Context.Provider
@@ -46,6 +47,8 @@ function Provider({ children }) {
                 setVolumeSong: setVolumeSong,
                 song: song,
                 setSong: setSong,
+                fullscreen: fullscreen,
+                setFullscreen: setFullscreen,
             }}
         >
             {children}

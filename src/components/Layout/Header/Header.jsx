@@ -42,6 +42,8 @@ const Header = () => {
     const valueCT = useContext(StoreContext);
     const toggled = valueCT.toggled
     const setToggled = valueCT.setToggled
+    const fullscreen = valueCT.fullscreen
+    const setFullscreen = valueCT.setFullscreen
     const handleToggle = () => {
         setToggled((s) => !s);
     };
@@ -50,6 +52,24 @@ const Header = () => {
     const handleOpenMenu = () => {
         setOpenMenu((s) => !s);
     };
+    const handleFullScreen = () => {
+        if (!fullscreen) {
+            setFullscreen(true);
+            const e = document.documentElement;
+            e.requestFullscreen();
+        } else {
+            setFullscreen(false);
+            if (!document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+    }
 
     return (
         <div className="px-[48px] flex items-center justify-between z-50">
@@ -98,11 +118,13 @@ const Header = () => {
                     alt="iconMenu"
                     className="mt-[6px] cursor-pointer hover:opacity-60 transition-opacity ease-in delay-100"
                 />
-                <img
-                    src="https://lofi.co/icons/fullscreen.svg"
-                    alt="iconMenu"
-                    className="mt-[6px] cursor-pointer hover:opacity-60 transition-opacity ease-in delay-100"
-                />
+                <button onClick={handleFullScreen}>
+                    <img
+                        src="https://lofi.co/icons/fullscreen.svg"
+                        alt="iconMenu"
+                        className="mt-[6px] cursor-pointer hover:opacity-60 transition-opacity ease-in delay-100"
+                    />
+                </button>
                 <div className="relative" onClick={handleOpenMenu}>
                     <img
                         src="https://lofi.co/icons/menu-3.svg"
