@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
-import { StoreContext } from "../../store";
+import { useContext } from "react"
+import { StoreContext } from "../../store"
 
-import ReactAudioPlayer from "react-audio-player";
+import ReactAudioPlayer from "react-audio-player"
 
-import "./BookCafe.scss";
-import Slider from "@mui/material/Slider";
+import "./BookCafe.scss"
+import Slider from "@mui/material/Slider"
 
 const BookCafe = () => {
-    const valueCT = useContext(StoreContext);
+    const valueCT = useContext(StoreContext)
     const toggled = valueCT.toggled
     const setEnter = valueCT.setEnter
     const rain = valueCT.rain
@@ -23,23 +23,23 @@ const BookCafe = () => {
     const fullscreen = valueCT.fullscreen
 
     const handleRain = () => {
-        setRain((s) => !s);
+        setRain((s) => !s)
         if (rain === true) {
             setVolumeRain(0)
         } else {
             setVolumeRain(50)
             setCityRain(50)
         }
-    };
+    }
     const handleKeyboard = () => {
-        setKeyboard((s) => !s);
+        setKeyboard((s) => !s)
         if (keyboard === true) {
             setVolumeKeyboard(0)
         } else {
             setVolumeKeyboard(50)
             setSoundKey(50)
         }
-    };
+    }
     const handleEnter = () => {
         setEnter((s) => !s)
     }
@@ -52,7 +52,7 @@ const BookCafe = () => {
         setVolumeKeyboard(e.target.value)
     }
 
-    const comboMode = `${toggled}-${rain}`;
+    const comboMode = `${toggled}-${rain}`
 
     return (
         <div>
@@ -61,10 +61,13 @@ const BookCafe = () => {
                 <div>
                     {/* Day */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-all ease-in duration-300 ${comboMode === "true-false"
-                            ? "opacity-100"
-                            : "opacity-0"
-                            }`}
+                        className={`w-[100vw] z-[-1] absolute ${
+                            fullscreen ? "top-[0%]" : "top-[-11%]"
+                        } object-cover transition-all ease-in duration-300 ${
+                            comboMode === "true-false"
+                                ? "opacity-100"
+                                : "opacity-0"
+                        }`}
                         loop
                         autoPlay
                         muted
@@ -76,10 +79,13 @@ const BookCafe = () => {
                     </video>
                     {/* Rain Day */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-all ease-in duration-300 ${comboMode === "true-true"
-                            ? "opacity-100"
-                            : "opacity-0"
-                            }`}
+                        className={`w-[100vw] z-[-1] absolute ${
+                            fullscreen ? "top-[0%]" : "top-[-11%]"
+                        } object-cover transition-all ease-in duration-300 ${
+                            comboMode === "true-true"
+                                ? "opacity-100"
+                                : "opacity-0"
+                        }`}
                         loop
                         autoPlay
                         muted
@@ -91,10 +97,13 @@ const BookCafe = () => {
                     </video>
                     {/* Night */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-all ease-in duration-300 ${comboMode === "false-false"
-                            ? "opacity-100"
-                            : "opacity-0"
-                            }`}
+                        className={`w-[100vw] z-[-1] absolute ${
+                            fullscreen ? "top-[0%]" : "top-[-11%]"
+                        } object-cover transition-all ease-in duration-300 ${
+                            comboMode === "false-false"
+                                ? "opacity-100"
+                                : "opacity-0"
+                        }`}
                         autoPlay
                         loop
                         muted
@@ -106,10 +115,13 @@ const BookCafe = () => {
                     </video>
                     {/* Rain Night */}
                     <video
-                        className={`w-[100vw] z-[-1] absolute ${fullscreen ? 'top-[0%]' : 'top-[-11%]'} object-cover transition-all ease-in duration-300 ${comboMode === "false-true"
-                            ? "opacity-100"
-                            : "opacity-0"
-                            }`}
+                        className={`w-[100vw] z-[-1] absolute ${
+                            fullscreen ? "top-[0%]" : "top-[-11%]"
+                        } object-cover transition-all ease-in duration-300 ${
+                            comboMode === "false-true"
+                                ? "opacity-100"
+                                : "opacity-0"
+                        }`}
                         loop
                         autoPlay
                         muted
@@ -192,13 +204,15 @@ const BookCafe = () => {
                     </div>
                     {/* Go Out */}
                     <div className="popover-action flex flex-col justify-start items-center absolute top-[70%] left-[0%] w-[200px] h-auto cursor-pointer">
-                        <div className="border-white circle-hover flex justify-center items-center w-[32px] h-[32px] border-[3px] rounded-full cursor-pointer transition-all duration-[20] ease-in"
+                        <div
+                            className="border-white circle-hover flex justify-center items-center w-[32px] h-[32px] border-[3px] rounded-full cursor-pointer transition-all duration-[20] ease-in"
                             onClick={handleEnter}
                         >
                             <div className="opacity-0 bg-white w-[18px] h-[18px] rounded-full transition-all duration-[20] ease-in"></div>
                         </div>
                         <div className="title flex flex-col items-center justify-center min-w-[120px] min-h-[1px] p-[8px] mt-[8px] bg-[#00000080] rounded-[8px] transition-all ease-in-out duration-[20]">
-                            <h6 className="mx-[16px] text-[16px] font-[500] leading-[16px] text-white hover:opacity-60"
+                            <h6
+                                className="mx-[16px] text-[16px] font-[500] leading-[16px] text-white hover:opacity-60"
                                 onClick={handleEnter}
                             >
                                 Go out
@@ -208,7 +222,7 @@ const BookCafe = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default BookCafe;
+export default BookCafe
