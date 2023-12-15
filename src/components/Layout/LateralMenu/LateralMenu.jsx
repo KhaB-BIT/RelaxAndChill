@@ -1,12 +1,10 @@
 import { useContext, useState } from "react"
 import images from "../../../assets/images/images"
 import "./LateralMenu.scss"
-
 import ReactAudioPlayer from "react-audio-player"
 import Slider from "@mui/material/Slider"
 import { StoreContext } from "../../../store"
 import { chill, jazzy, sleep } from "../../../data/dataSong"
-// import { faL } from "@fortawesome/free-solid-svg-icons"
 
 const LateralMenu = () => {
     const [mood, setMood] = useState(false)

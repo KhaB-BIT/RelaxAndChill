@@ -1,3 +1,16 @@
 .menu:hover .menu-item {
     display: block;
 }
+
+@keyframes mymove {
+    20% {
+        transform: rotate(45deg);
+    }
+    60% {
+        transform: rotate(-45deg);
+    }
+}
+
+.myLogo {
+    animation: mymove 5s infinite;
+}

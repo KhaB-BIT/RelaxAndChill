@@ -66,12 +66,15 @@ const Header = () => {
 
     return (
         <div className="px-[48px] flex items-center justify-between z-50">
-            <div>
+            <div className="myLogo">
                 <img
-                    className="object-cover h-[50px] w-[50px] rounded-md mt-2"
+                    className="object-cover h-[50px] w-[50px] rounded-md mt-2 "
                     src={Logo}
                     alt="logo"
                 />
+                <span className="text-white font-semibold drop-shadow-2xl">
+                    Relax & Chill
+                </span>
             </div>
             <div className="flex items-center h-full gap-[16px] ">
                 {/* Toggle Weather */}
